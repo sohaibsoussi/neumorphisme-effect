@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 28px;
+            font-weight: lighter;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+        }
+        body{
+        
+        }
+        section{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+            width: 100%;
+            flex-direction: column;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none;
+           
+        }
+        .header-1{
+            margin-bottom: 30px;
+            height: 140px;
+        }
+        .typing{
+            position: relative;
+            height: 100%;
+            color:#0c2835 ;
+            font-size:83px;
+            font-weight: normal;
+            display: inline-block;
+            text-shadow:0 10px 10px rgb(16, 128, 156);
+            padding: 0 0px;
+            overflow: hidden;
+            animation:textTyping 4s steps(18) infinite;
+            
+        }
+        @keyframes textTyping {
+            0%{width: 1px;}
+            30%{width: 630.59px;}
+            60%{width: 630.59px;}
+            90%{width: 1px;}
+            100%{width: 1px;}
+        }
+        .elm{
+            position: relative;
+            display: grid;
+            padding:10px;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+            border-radius: 10px;
+            margin: 100px 0;
+            
+        }
+        .elm .value{
+            grid-column: span 4;
+            margin-bottom: 5px;
+            height: 90px;
+            text-align: right;
+            border: none;
+            padding: 10px;
+            color: #0c2835;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: inset 20px 20px 60px #d9d9d9,
+                        inset -20px -20px 60px #ffffff;
+        }
+            
+        .elm div{
+            display: grid;
+            width: 90px;
+            margin: 4px 2px;
+            height: 90px;
+            color: #0c2835;
+            background-color: aliceblue;
+            place-items: center;
+            background: #ffffff;
+            box-shadow: inset 20px 20px 60px #d9d9d9,
+                        inset -20px -20px 60px #ffffff;
+            border-radius: 10px;
+            transition: all 0.1s ease-in-out;
+        }
+        .elm div:active{
+            background:#0c2835 ;
+            color: aliceblue;
+        }
+        .elm .sup{
+            grid-column: span 2;
+            width: 97%;
+        }
+        
+        .elm .PLUS{
+            grid-row: span 2;
+            height:97%;
+        }
+        footer{
+            position: relative;
+            width:100%;
+            min-height:30px;
+            display: flex;
+            justify-content:center;
+            align-items:center; 
+            background-color: rgb(0, 0, 0);  
+        }
+        footer a{
+            font-size: 18px;
+        }
+        @media  only screen and  (max-width:991px){
+            
+            .header-1{
+                margin-bottom: 5px;
+                height: 140px;
+            }
+            .typing{
+                font-size:45px;   
+            }
+            @keyframes textTyping {
+                0%{width: 1px;}
+                30%{width: 340.52px;}
+                60%{width:340.52px;}
+                90%{width: 1px;}
+                100%{width: 1px;}
+            }
+            .elm{
+                margin: 20px 20px 100px;
+            }
+        }
+    </style>
+    <script>
+        function del(){
+            let value = document.calc.txt.value
+            value = value.slice(0, -1)
+            return value
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <header class="header-1">
+            <a class="typing">calculator_design</a>
+        </header>
+        <p style="font-family:'Times New Roman', Times, serif;font-weight:lighter;">Neumorphisme effect</p>
+        <form class="elm" name="calc">
+            <input type="text" name="txt" class="value" readonly>
+            <div class="sup" onclick="document.calc.txt.value = del()">sup</div>
+            <div class="num" onclick="document.calc.txt.value +='/'">/</div>
+            <div class="num" onclick="document.calc.txt.value +='*'">*</div>
+            <div class="num" onclick="document.calc.txt.value +='7'">7</div>
+            <div class="num" onclick="document.calc.txt.value +='8'">8</div>
+            <div class="num" onclick="document.calc.txt.value +='9'">9</div>
+            <div class="num" onclick="document.calc.txt.value +='-'">-</div>
+            <div class="num" onclick="document.calc.txt.value +='4'">4</div>
+            <div class="num" onclick="document.calc.txt.value +='5'">5</div>
+            <div class="num" onclick="document.calc.txt.value +='6'">6</div>
+            <div class="PLUS" onclick="document.calc.txt.value +='+'">+</div>
+            <div class="num" onclick="document.calc.txt.value +='3'">3</div>
+            <div class="num" onclick="document.calc.txt.value +='2'">2</div>
+            <div class="num" onclick="document.calc.txt.value +='1'">1</div>
+            <div class="num" onclick="document.calc.txt.value +='0'">0</div>
+            <div class="num" onclick="document.calc.txt.value +='00'">00</div>
+            <div class="num" onclick="document.calc.txt.value +='.'">.</div>
+            <div class="num" onclick="document.calc.txt.value = eval(calc.txt.value)">=</div>
+        </form>
+    </section>
+    <footer>
+        <a href="https://www.linkedin.com/in/sohaib-soussi-034216212/" style="text-decoration: none;color: white;">©SOHAIBSOUSSIPRODUCTION</a>
+    </footer>
+</body>
+</html>
